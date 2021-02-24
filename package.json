@@ -1,0 +1,27 @@
+{
+  "name": "ioc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/container.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Sarah Saad",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^26.0.20",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "express": "^4.17.1",
+    "ts-jest": "^26.5.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "eslint": "^7.14.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.1.2"
+  }
+}
