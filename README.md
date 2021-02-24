@@ -2,6 +2,11 @@
 
 This liberary is a very minimalistic implemention of dependency injection mechanism. 
 
+## Background:
+
+Although Inversion of Control (IoC) is mainly about removing dependency on concrete implemention of dependencies and using interfaces instead of classes.
+Due to given short time, I chose to implement the DI first and it can be further enhanced to make it more abstract.
+
 ## Usage:
 
 It follows the classical IoC implementation to use decorators that provide a convenient interface for marking
