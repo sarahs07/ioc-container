@@ -4,7 +4,6 @@ import { IProvider } from './provider.interface';
 export class Container implements IContainer{
 
   private _services: Map<string, object>;
-  public providers: { [key: string]: any } = {};
 
   constructor(){
     this._services = new Map();
@@ -25,37 +24,51 @@ export class Container implements IContainer{
 
   public register(name: string, definition: object, dependencies: Array<string> = []){
     try{
-      if (!this._isValidName) console.error(`Invalid dependency name provided to register`);
-      if (!this._isValidDefinition) console.error(`Invalid dependency definiation provided`);
+      if (!this._isValidName(name)) throw new Error(`Invalid dependency name provided to register`);
+      if (!this._isValidDefinition(definition)) throw new Error(`Invalid dependency definiation provided`);
       if(!Array.isArray(dependencies)) {
-        console.error(`Dependencies need to be supplied as array`);
-        return false;
+        throw new Error(`Dependencies need to be supplied as array`);
       }
-      this._services.set(name, {definition: definition, dependencies: dependencies});
-
+      return this._services.set(name, {definition: definition, dependencies: dependencies});
     }
     catch(e){
-      console.error(`Unable to register dependency $e`);
+      throw new Error(`Unable to register dependency ${e}`);
     }
   }
 
-  private _get(name: string): Array<Object> | Object{
-    if (!this._isValidName) {
-      throw new Error(`Invalid dependency name provided to fetch`);
-      return false;
+  private _get(name: string): Array<Object> | Object {
+    try{
+      if (!this._isValidName(name)) throw new Error(`Invalid dependency name provided to fetch`);
+  
+      let service: any = this._services.get(name);
+      if(this._isValidDefinition(service.definition)){
+        return this._createSingleton(service);
+      }
     }
-    let service: any = this._services.get(name);
-
-    if (service) return this._resolveDependencies(service.dependencies);
-    return false;
+    catch(e){
+      throw new Error(`Unable to create dependency instance ${e}`);
+    }
   }
 
-  private _resolveDependencies(dependencies: Array<string>){
-    return dependencies.map(name => this._get(name));
+  private _resolvedDependencies(dependencies: Array<string>){
+    try{
+      return dependencies.map(name => this._get(name));
+    }
+    catch(e){
+      throw new Error(`_resolvedDependencies ${e}`);
+    }
+  }
+
+  private _createSingleton(service: any){
+    try{
+      return new service.definition(...this._resolvedDependencies(service.dependencies));
+    }
+    catch(e){
+      throw new Error(`_createSingleton ${e}`);
+    }
   }
 
   private _isValidName(name:string){
-    console.log('in _isValidName');
     if(typeof name !== 'string' || name.length === 0) return false;
     return true;
   }
@@ -64,4 +77,5 @@ export class Container implements IContainer{
     if(typeof definition !== 'function') return false;
     return true;
   }
+
 }
