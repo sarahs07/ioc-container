@@ -24,9 +24,8 @@ export class Container implements IContainer{
     try{
       if (!this._isValidName(name)) throw new Error(`Invalid dependency name provided to register`);
       if (!this._isValidDefinition(definition)) throw new Error(`Invalid dependency definiation provided`);
-      if(!Array.isArray(dependencies)) {
-        throw new Error(`Dependencies need to be supplied as array`);
-      }
+      if (!Array.isArray(dependencies)) throw new Error(`Dependencies need to be supplied as array`);
+
       return this._services.set(name, {definition: definition, dependencies: dependencies});
     }
     catch(e){
@@ -72,8 +71,7 @@ export class Container implements IContainer{
   }
 
   private _isValidDefinition(definition: Factory){
-    if(typeof definition !== 'function') return false;
-    return true;
+    return typeof definition !== 'function';
   }
 
 }
