@@ -13,9 +13,16 @@ It follows the classical IoC implementation which can be used in two ways:
 
 ### With API methods as below
 
-`container.register('mockService', mockService, ['dependencyOne', 'dependencyTwo']);`
+```
+// register a factory
+container.register('mockService', mockService, ['dependencyOne', 'dependencyTwo']);
+```
 and then
-`container.get('mockService');`
+
+```
+// retrieve a service
+container.get('mockService');
+```
 
 ### With decorators 
 This provide a convenient interface for marking
@@ -23,12 +30,16 @@ specific classes (‘@injectable’) that can be used as dependencies.
 Class that need a dependency to be injected use @inject with the token specifying the dependency name.
 Potential service/dependecy class annotation
 
-`@injectable('httpInterceptService')
-class httpInterceptService {}`
+```
+@injectable('httpInterceptService')
+class httpInterceptService {}
+```
 
 Client: component or another service needing an instance of this service to be injected.
 
-`@inject('httpInterceptService') httpInterceptService;`
+```
+@inject('httpInterceptService') httpInterceptService;
+```
 
 
 
