@@ -10,6 +10,10 @@ describe('IoC Container', () => {
     container = new Container();
   });
 
+  afterEach(()=>{
+    container = null;
+  })
+
   test('get method - checks for validity of the dependency name', () => {
     expect(() => container.get('')).toThrow('Invalid dependency name provided to fetch');
   });
@@ -19,17 +23,15 @@ describe('IoC Container', () => {
     container.register('dependencyOne', dependencyOne);
     container.register('dependencyTwo', dependencyTwo);
 
-    let spy_isValidName = spyOn<any>(container, '_isValidName');
-    spy_isValidName.and.returnValue(true);
+    spyOn<any>(container, '_isValidName').and.returnValue(true);
 
-    let spy_isValidDefinition = spyOn<any>(container, '_isValidDefinition');
-    spy_isValidDefinition.and.returnValue(true);
+    spyOn<any>(container, '_isValidDefinition').and.returnValue(true);
+
+    // calling get method with the dependency name
     const instanceCreated = container.get('mockService');
 
-    expect(spy_isValidName).toHaveBeenCalled();
-    expect(spy_isValidDefinition).toHaveBeenCalled();
-
     expect(instanceCreated instanceof mockService).toBe(true);
+    console.log('instance created', instanceCreated)
   });
 
   test('register method - checks for validity of the dependency name', () => {

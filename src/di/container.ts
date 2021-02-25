@@ -1,6 +1,4 @@
-import { IContainer } from './container.interface';
-import { IProvider } from './provider.interface';
-
+import { IContainer, Factory } from './container.interface';
 export class Container implements IContainer{
 
   private _services: Map<string, object>;
@@ -22,7 +20,7 @@ export class Container implements IContainer{
    * to register any class annotated by the @injectable decorator.
    */
 
-  public register(name: string, definition: object, dependencies: Array<string> = []){
+  public register(name: string, definition: Factory, dependencies: Array<string> = []){
     try{
       if (!this._isValidName(name)) throw new Error(`Invalid dependency name provided to register`);
       if (!this._isValidDefinition(definition)) throw new Error(`Invalid dependency definiation provided`);
@@ -73,7 +71,7 @@ export class Container implements IContainer{
     return true;
   }
 
-  private _isValidDefinition(definition: object){
+  private _isValidDefinition(definition: Factory){
     if(typeof definition !== 'function') return false;
     return true;
   }

@@ -1,6 +1,6 @@
 import { Container } from '../di/container';
 
-export function Injector(token: string): void {
+export function Injector(token: string): object {
   const container = new Container();
-  container.get(token);
+  return container.get(token);
 }
