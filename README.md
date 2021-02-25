@@ -13,7 +13,7 @@ It follows the classical IoC implementation which can be used in two ways:
 
 ### With API methods as below
 
-` container.register('mockService', mockService, ['dependencyOne', 'dependencyTwo']);`
+`container.register('mockService', mockService, ['dependencyOne', 'dependencyTwo']);`
 and then
 `container.get('mockService');`
 
