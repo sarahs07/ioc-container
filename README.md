@@ -13,13 +13,13 @@ It follows the classical IoC implementation which can be used in two ways:
 
 ### With API methods as below
 
-```
+```ts
 // register a factory
 container.register('mockService', mockService, ['dependencyOne', 'dependencyTwo']);
 ```
 and then
 
-```
+```ts
 // retrieve a service
 container.get('mockService');
 ```
@@ -30,14 +30,14 @@ specific classes (‘@injectable’) that can be used as dependencies.
 Class that need a dependency to be injected use @inject with the token specifying the dependency name.
 Potential service/dependecy class annotation
 
-```
+```ts
 @injectable('httpInterceptService')
 class httpInterceptService {}
 ```
 
 Client: component or another service needing an instance of this service to be injected.
 
-```
+```ts
 @inject('httpInterceptService') httpInterceptService;
 ```
 
