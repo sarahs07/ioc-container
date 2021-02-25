@@ -11,10 +11,9 @@ Due to given short time, I chose to implement the DI first and it can be further
 
 It follows the classical IoC implementation which can be used in two ways: 
 
-1. With decorators that provide a convenient interface for marking
+### With decorators that provide a convenient interface for marking
 specific classes (‘@injectable’) that can be used as dependencies.
 Class that need a dependency to be injected use @inject with the token specifying the dependency name.
-
 Potential service/dependecy class annotation
 
 `@injectable('httpInterceptService')
@@ -24,7 +23,7 @@ Client: component or another service needing an instance of this service to be i
 
 `@inject('httpInterceptService') httpInterceptService;`
 
-2. With use of public methods as below
+### With API methods as below
 
 ` container.register('mockService', mockService, ['dependencyOne', 'dependencyTwo']);`
 and then
