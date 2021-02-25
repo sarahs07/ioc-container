@@ -15,8 +15,7 @@ It follows the classical IoC implementation which can be used in two ways:
 specific classes (‘@injectable’) that can be used as dependencies.
 Class that need a dependency to be injected use @inject with the token specifying the dependency name.
 
-e.g. 
-Potential service/dependecy:
+Potential service/dependecy class annotation
 
 `@injectable('httpInterceptService')
 class httpInterceptService {}`
