@@ -2,15 +2,15 @@ import { Container } from './container';
 
 describe('IoC Container', () => {
   let container: Container;
-  let mockService = class MockService{};
-  let dependencyOne = class dependencyOne{};
-  let dependencyTwo = class dependencyTwo{};
+  let mockService = class MockService { };
+  let dependencyOne = class dependencyOne { };
+  let dependencyTwo = class dependencyTwo { };
 
-  beforeEach(()=>{
+  beforeEach(() => {
     container = new Container();
   });
 
-  afterEach(()=>{
+  afterEach(() => {
     container = null;
   })
 
@@ -44,7 +44,7 @@ describe('IoC Container', () => {
 
     let spy_isValidDefinition = spyOn<any>(container, '_isValidDefinition');
     spy_isValidDefinition.and.returnValue(true);
-    
+
     container.register('mockService', mockService);
 
     expect(spy_isValidName).toHaveBeenCalled();

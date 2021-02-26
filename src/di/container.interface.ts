@@ -1,6 +1,4 @@
-export interface Factory ()=>{};
-
 export interface IContainer {
-  register(name: string, factory: Factory, dependencies: Array<string>): void;
+  register(name: string, factory: {}, dependencies: Array<string>): void;
   get(name: string);
 }
