@@ -31,7 +31,7 @@ Class that needs a dependency to be injected, can use @inject with the token spe
 Potential service/dependecy class annotation
 
 ```ts
-@injectable('httpInterceptService')
+@injectable('httpInterceptService', mockDepClass, [])
 class httpInterceptService {}
 ```
 
