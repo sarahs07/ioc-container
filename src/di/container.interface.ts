@@ -1,4 +1,4 @@
-export type Factory = ()=>{};
+export interface Factory ()=>{};
 
 export interface IContainer {
   register(name: string, factory: Factory, dependencies: Array<string>): void;
