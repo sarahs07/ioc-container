@@ -19,7 +19,6 @@ export class Container implements IContainer {
    * @usage it gets called by the decorator @injectable
    * to register any class annotated by the @injectable decorator.
    */
-
   public register(
     name: string,
     definition: {},
