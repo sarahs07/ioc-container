@@ -28,7 +28,7 @@ and then
 container.get('mockService')
 ```
 
-### With decorators
+### With decorators 
 
 This provide a convenient interface for marking
 specific classes (‘@injectable’) that can be used as dependencies.
@@ -45,3 +45,5 @@ Client: component or another service needing an instance of this service to be i
 ```ts
 @inject('httpInterceptService') httpInterceptService;
 ```
+
+Note: this feature needs to be finished along with unit tests.
