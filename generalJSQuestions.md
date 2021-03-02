@@ -33,7 +33,7 @@ By default the value of this is set to the 'window' object. However, it can be s
 declared within these settings. 
 In a class declaration e.g. 
 
-``` 
+```JS
 Class ClassA { 
   this.prop1 = 'prop1 val';
 
@@ -47,11 +47,13 @@ value of this is set to the instance of classA and method1 returns value 'prop1 
 
 it's value can be changed in couple of ways e.g.
 
-1. using arrow functions ```() => {}```
+1. using arrow functions `js () => {}`
 which set the value of this it's a lexical scope just like a closure function.
 
 2. chaining 'bind()' to the function invocation e.g. 
-    ``` this.functionA().bind(this) ```
+    ```js
+    this.functionA().bind(this)
+    ```
     
 
 
