@@ -14,8 +14,10 @@ function outerFunction(x) {
 ```
 
 ```js
-outerFunction(10); 
-result would be: 1
+let executeFunc = outerFunction(); 
+executeFunc(10);
+
+result would be: 11
 ```
 
 ### b. What are their disadvantages?
