@@ -33,12 +33,13 @@ By default the value of this is set to the 'window' object. However, it can be s
 declared within these settings. 
 In a class declaration e.g. 
 
-``` Class ClassA { 
-      this.prop1 = 'prop1 val';
-      
-      this.method1(){
-        return this.prop1;
-      }
+``` 
+Class ClassA { 
+  this.prop1 = 'prop1 val';
+
+  this.method1(){
+    return this.prop1;
+ }
 ```
 value of this is set to the instance of classA and method1 returns value 'prop1 val';
 
