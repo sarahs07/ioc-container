@@ -1,6 +1,6 @@
 ### What is a closure?
 
-A closure is an environment whereby an inner function is able to derive values for it's variables from it's lexical (surrounding/outer) scrope e.g.
+A closure is an environment whereby an inner function is able to drive values for it's variable(s) from it's lexical (surrounding/outer) scope e.g.
 
 ```JS
 function () { 
