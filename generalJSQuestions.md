@@ -3,12 +3,19 @@
 A closure is an environment whereby an inner function is able to drive values for it's variable(s) from it's lexical (surrounding/outer) scope e.g.
 
 ```JS
-function outerFunction() { 
+function outerFunction(x) { 
   y = 1;
   function innerFunction(x) {
   return x+y;
   }
+  
+  return innerFunction;
 }
+```
+
+```js
+outerFunction(10); 
+result would be: 1
 ```
 
 ### b. What are their disadvantages?
