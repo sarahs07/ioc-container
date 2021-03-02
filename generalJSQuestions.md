@@ -46,14 +46,21 @@ In a class declaration e.g.
 
 ```JS
 class ClassA { 
-  prop1 = 'prop1 val';
+  prop1 = 'var test = new ClassA()
+console.log(test.method1());';
 
   method1(){
     return this.prop1;
  }
 }
 ```
-value of this is set to the instance of classA and method1 returns value 'prop1 val';
+
+```JS
+var test = new ClassA()
+test.method1();
+
+result is 'prop1 val
+```
 
 ### b. How can you change its value?
 
