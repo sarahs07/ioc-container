@@ -21,7 +21,7 @@ There are two main disadvantages:
 ### 2. How does the inheritance system in JavaScript work?
 
 Inheritance system in JavaScript works via prototypical inheritance which is not similar to the conventional OO inheritance.
-Every data type (under the hood) is a JavaScript Object which has it's own set of private properties and methods added to '__protype__'
+Every data type (under the hood) is a JavaScript Object which has it's own set of private properties and methods added to prototype property.
 
 The 'Object.prototype' property represents the Object prototype object.
 All prototype properties and methods become available to all instances of the object with the same implementation.
