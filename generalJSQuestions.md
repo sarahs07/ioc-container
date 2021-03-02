@@ -47,7 +47,10 @@ value of this is set to the instance of classA and method1 returns value 'prop1 
 
 it's value can be changed in couple of ways e.g.
 
-1. using arrow functions `js () => {}`
+1. using arrow functions 
+   ```js 
+    () => {}
+   ```
 which set the value of this it's a lexical scope just like a closure function.
 
 2. chaining 'bind()' to the function invocation e.g. 
