@@ -45,9 +45,9 @@ value of this is set to the instance of classA and method1 returns value 'prop1 
 
 ### b. How can you change its value?
 
-it's value can be changed in couple of ways e.g.
+it's value can be changed in a few ways e.g.
 
-1. using arrow functions 
+1. using arrow functions - automatically set the value of this to the lexical scope.
    ```js 
     () => {}
    ```
@@ -56,6 +56,10 @@ which set the value of this it's a lexical scope just like a closure function.
 2. chaining 'bind()' to the function invocation e.g. 
     ```js
     this.functionA().bind(this)
+    ```
+3. Setting the value of this in call() to apply() functions e.g. 
+    ``` js
+    functionA.call(newThisObj, params)
     ```
     
 
