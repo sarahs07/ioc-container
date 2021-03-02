@@ -35,9 +35,9 @@ In a class declaration e.g.
 
 ```JS
 Class ClassA { 
-  this.prop1 = 'prop1 val';
+  prop1 = 'prop1 val';
 
-  this.method1(){
+  method1(){
     return this.prop1;
  }
 ```
