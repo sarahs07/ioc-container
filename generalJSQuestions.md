@@ -49,8 +49,8 @@ it's value can be changed in couple of ways e.g.
 1. using arrow functions ```() => {}```
 which set the value of this it's a lexical scope just like a closure function.
 
-2. chaining bing() to the function invocation e.g. 
-    ``` this.functionA().bind(this)
+2. chaining 'bind()' to the function invocation e.g. 
+    ``` this.functionA().bind(this) ```
     
 
 
