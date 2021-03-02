@@ -29,6 +29,18 @@ All prototype properties and methods become available to all instances of the ob
 ### 3.  a. What is `this`
 
 this is a variable / object whose value is set at the time of it's invocation. 
+By default the value of this is set to the 'window' object. However, it can be scoped to a block or function level when
+declared within these settings. 
+In a class declaration e.g. 
+
+``` Class ClassA { 
+      this.prop1 = 'prop1 val';
+      
+      this.method1(){
+        return this.prop1;
+      }
+```
+value of this is set to the instance of classA and method1 returns value 'prop1 val';
 
 ### b. How can you change its value?
 
