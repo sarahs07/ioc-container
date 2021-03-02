@@ -28,7 +28,7 @@ All prototype properties and methods become available to all instances of the ob
 
 ### 3.  a. What is `this`
 
-this is a variable / object whose value is set at the time of it's invocation. 
+this is a variable / object whose value is set at the time of the function invocation. 
 By default the value of this is set to the 'window' object. However, it can be scoped to a block or function level when
 declared within these settings. 
 In a class declaration e.g. 
