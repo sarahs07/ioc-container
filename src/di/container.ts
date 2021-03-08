@@ -48,7 +48,6 @@ export class Container implements IContainer {
 
       let service: any = this._services.get(name)
       if (this._isValidDefinition(service.definition)) {
-        console.log('heee ', typeof this._createSingleton(service), this._createSingleton(service));
         return this._createSingleton(service)
       }
     } catch (e) {

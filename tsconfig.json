@@ -1,5 +1,4 @@
 {
-  "files": ["src/di/container.ts"],
   "compilerOptions": {
     "noImplicitAny": true,
     "target": "es5",
